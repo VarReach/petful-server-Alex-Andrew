@@ -29,8 +29,11 @@ app.use(function (err, req, res, next) {
   });
 });
 
-// /queue/status
-// GET, POST, PATCH, DELETE
+// /users
+// POST, DELETE
+
+// /users/:userId/queue
+// GET
 
 // /adoptions
 // GET, POST, DELETE

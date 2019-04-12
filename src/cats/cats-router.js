@@ -1,5 +1,6 @@
 const express = require('express');
 const catQueue = require('./store-cats');
+const catsService = require('./cats-service');
 
 const catsRouter = express.Router();
 
@@ -18,6 +19,9 @@ catsRouter
   })
   .delete((req, res, next) => {
     catQueue.dequeue();
+    if (req.cat) {
+      catsService.addAdoptedCat(req.cat);
+    }
     return res.sendStatus(204);
   });
 
