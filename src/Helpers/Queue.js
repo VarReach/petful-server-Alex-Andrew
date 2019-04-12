@@ -1,7 +1,7 @@
 class _Node {
-  constructor(value, next, prev) {
+  constructor(value) {
     this.value = value;
-    this.next = next;
+    this.next = null;
   }
 }
 class Queue {
@@ -12,15 +12,12 @@ class Queue {
 
   enqueue(data) {
     const node = new _Node(data);
-
     if (this.first === null) {
       this.first = node;
     }
-
     if (this.last) {
       this.last.next = node;
     }
-    //make the new node the last item on the queue
     this.last = node;
   }
 
@@ -38,4 +35,21 @@ class Queue {
     return node.value;
   }
 }
-module.exports = Queue;
+
+function queueSize(queue) {
+  let size = 0;
+  if (queue.first === null) {
+    return size;
+  }
+  let current = queue.first;
+  while (current !== null) {
+    current = current.next;
+    size++;
+  }
+  return size;
+}
+
+module.exports = {
+  Queue,
+  queueSize
+};

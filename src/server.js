@@ -3,6 +3,7 @@ const morgan = require('morgan');
 const helmet = require('helmet');
 const cors = require('cors');
 const catsRouter = require('./cats/cats-router');
+const dogsRouter = require('./dogs/dogs-router');
 
 const app = express();
 app.use(morgan('tiny'));
@@ -10,6 +11,7 @@ app.use(helmet());
 app.use(cors());
 
 app.use('/api/cat', catsRouter);
+app.use('/api/dog', dogsRouter);
 // Catch-all 404
 app.use(function (req, res, next) {
   const err = new Error('Not Found');
@@ -29,13 +31,6 @@ app.use(function (err, req, res, next) {
 
 // /queue/status
 // GET, POST, PATCH, DELETE
-
-
-// /cats
-// GET, DELETE
-
-// /dogs
-// GET, DELETE
 
 // /adoptions
 // GET, POST, DELETE
