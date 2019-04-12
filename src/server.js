@@ -5,7 +5,7 @@ const cors = require('cors');
 const catsRouter = require('./cats/cats-router');
 const dogsRouter = require('./dogs/dogs-router');
 const usersRouter = require('./users/users-router');
-const PORT = process.env.PORT || 8080;
+const { CLIENT_ORIGIN, PORT } = require('./config');
 
 const app = express();
 const morganSetting = process.env.NODE_ENV === 'production' ? 'tiny' : 'common'
