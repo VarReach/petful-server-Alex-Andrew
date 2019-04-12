@@ -1,26 +1,35 @@
-# Express Boilerplate!
+# PET-O-RAMA 5001
 
-This is a boilerplate project used for starting new projects!
+An app by Alex Reich and Andrew Bituin.
 
-## How do set up?
+## INTRO
 
-Complete the following steps to start a new project (NEW-PROJECT-NAME):
+Pet-O-Rama 5001 is an app that helps connect pets who are up for adoption with their future forever homes!
+We want all pets at Pet-O-Rama 5001 to find a home. With that in mind, we've designed our app so that the cats and dogs who have arrived first at our animal shelter have first priority in the adoption process. As such, pets that are first in line must be adopted before any other pets can be selected
+for adoption. This ensures all of our lovely pets find a home as quick as possible. Similarly, as a user, you will be put into a queue behind other users in the order of registration. 
 
-1. Clone this repository to your local machine `git clone BOILERPLATE-URL NEW-PROJECTS-NAME`
-2. `cd` into the cloned repository
-3. Make a fresh start of the git history for this project with `rm -rf .git && git init`
-4. Install the node dependencies `npm install`
-5. Move the example Environment file to `.env` that will be ignored by git and read by the express server `mv example.env .env`
-6. Edit the contents of the `package.json` to use NEW-PROJECT-NAME instead of `"name": "express-boilerplate",`
+### DOCUMENTED ENDPOINTS
 
-## Scripts
+/api/cat
+    GET returns the cat first in the queue
+    DELETE dequeues the first cat in the queue
 
-Start the application `npm start`
+/api/cat/adopted
+    GET returns all cats who have been slotted for adoption
 
-Start nodemon for the application `npm run dev`
+/api/dog
+    GET returns the dog first in the queue
+    DELETE dequeues the first dog in the queue
 
-Run the tests in watch mode `npm test`
+/api/dog/adopted
+    GET returns all dogs who have been slotted for adoption
 
-## Deploying
+/api/users
+    POST adds a user to the users' queue
+    DELETE removes the first user from the queue
 
-When your new project is ready for deployment, add a new heroku application with `heroku create`. This will make a new git remote called "heroku" and you can then `npm run deploy` which will push to this remote's master branch.
+/api/users/:userName
+    GET returns the position of the user in the queue given the userName 
+
+### TECH STACK
+Node.js, Express
