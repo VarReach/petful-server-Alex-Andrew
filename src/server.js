@@ -9,7 +9,9 @@ const usersRouter = require('./users/users-router');
 const app = express();
 app.use(morgan('tiny'));
 app.use(helmet());
-app.use(cors());
+app.use(cors({ 
+  origin: CLIENT_ORIGIN
+}));
 
 app.use('/api/cat', catsRouter);
 app.use('/api/dog', dogsRouter);
@@ -40,6 +42,6 @@ app.use(function (err, req, res, next) {
 // /adoptions
 // GET, POST, DELETE
 
-app.listen(8080,()=>{
+app.listen(PORT,()=>{
   console.log('Serving on 8080');
 });

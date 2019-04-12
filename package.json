@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "description": "",
   "keywords": [],
+  "engines": {
+    "node": "11.9.0"
+  },
   "author": "Alex Cumbo",
   "license": "UNLICENSED",
   "main": "server.js",
