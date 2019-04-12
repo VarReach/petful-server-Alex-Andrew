@@ -1,10 +1,11 @@
 const express = require('express');
-const dogQueue = require('./store-dogs');
+const { dogQueue } = require('./store-dogs');
 const dogsService = require('./dogs-service');
 const adoptedDogs = require('./store-adopted-dogs');
 const xss = require('xss');
 const dogsRouter = express.Router();
 const bodyParser = express.json();
+const { dogs } = require('./store-dogs');
 
 dogsRouter
   .route('/')
@@ -26,7 +27,10 @@ dogsRouter
     }
     return res.sendStatus(204);
   });
-
+dogsRouter.route('/all')
+  .get((req, res, next) => {
+    return res.status(200).json(dogs);
+  })
 dogsRouter.route("/adopted").get((req, res, next) => {
   if (adoptedDogs.first === null) {
     return res.status(200).json({ message: "No adopted dogs. Adopt now!" });

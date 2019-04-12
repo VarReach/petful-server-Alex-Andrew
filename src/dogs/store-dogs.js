@@ -57,7 +57,7 @@ const dogs = [
       'Charles, a former Navy SEAL and green beret, is blindingly fast and will steal your heart just as quickly!'
   },
   {
-    imageUrl:
+    imageURL:
       'https://cdn.shopify.com/s/files/1/2660/2782/products/IMG_5229_1024x1024.jpg?v=1547617723',
     imageDescription:
       'Black mini-poodle sitting on a wood floor with a string of paper hearts in the background',
@@ -69,8 +69,8 @@ const dogs = [
       'Previous owner was a spy and was KIA. But we probably shouldn\'t be telling you that...'
   },
   {
-    imageUrl:
-      'https://cdn.pixabay.com/photo/2017/12/07/14/02/black-lab-3003833_960_720.jpg',
+    imageURL:
+      'https://mondrian.mashable.com/uploads%252Fcard%252Fimage%252F818521%252F5809666d-8a76-4631-9de2-3f1cfda9ac52.jpg%252F950x534__filters%253Aquality%252890%2529.jpg?signature=ij6Fj5f799AVltttFUiI96gxYaA=&source=https%3A%2F%2Fblueprint-api-production.s3.amazonaws.com',
     imageDescription: 'Black lab lounging on some grass',
     name: 'Mikey',
     sex: 'Male',
@@ -80,7 +80,7 @@ const dogs = [
       'Retired from a successful career as a soccer player, now looking for a great home.'
   },
   {
-    imageUrl: 'https://www.k9web.com/wp-content/uploads/2019/01/shiba-inu.jpg',
+    imageURL: 'https://www.k9web.com/wp-content/uploads/2019/01/shiba-inu.jpg',
     imageDescription:
       'Shiba Inu sitting on grass with a tennis ball in his lap',
     name: 'Mai',
@@ -91,7 +91,7 @@ const dogs = [
       'Former ramen shop owner. Now hiding from the Yakuza. Looking for her dream home.'
   },
   {
-    imageUrl:
+    imageURL:
       'http://2.bp.blogspot.com/-jKQ4Z-r-knI/UGp1M_C9UGI/AAAAAAAARj0/nmAFnCJ720c/s1600/Alaska+Malamute.JPG',
     imageDescription: 'Malamute sitting gracefully in some snow next to a tree',
     name: 'Bruno',
@@ -102,7 +102,7 @@ const dogs = [
       'Former professional sled dog who was injured saving his home from an epidemic.'
   },
   {
-    imageUrl:
+    imageURL:
       'http://www.petpaw.com.au/wp-content/uploads/2014/03/American-Foxhound-2-1030x772.jpg',
     imageDescription:
       'A baby foxhound looking at the camera with puppy-dog eyes',
@@ -121,4 +121,4 @@ dogs.forEach(dog => {
   dogQueue.enqueue(dog);
 });
 
-module.exports = dogQueue;
+module.exports = { dogQueue, dogs};

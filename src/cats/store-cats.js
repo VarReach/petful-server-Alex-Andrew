@@ -119,4 +119,4 @@ cats.forEach(cat => {
   catQueue.enqueue(cat);
 });
 
-module.exports = catQueue;
+module.exports = {catQueue, cats};
