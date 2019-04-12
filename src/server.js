@@ -5,11 +5,13 @@ const cors = require('cors');
 const catsRouter = require('./cats/cats-router');
 const dogsRouter = require('./dogs/dogs-router');
 const usersRouter = require('./users/users-router');
-const { CLIENT_ORIGIN, PORT } = require('./config');
+const { NODE_ENV, CLIENT_ORIGIN, PORT } = require('./config');
 
 const app = express();
-const morganSetting = process.env.NODE_ENV === 'production' ? 'tiny' : 'common'
-app.use(morgan(morganSetting))
+
+const morganSetting = (NODE_ENV === 'production') ? 'tiny' : 'common';
+
+app.use(morgan(morganSetting));
 app.use(helmet());
 app.use(cors({ 
   origin: CLIENT_ORIGIN
@@ -17,7 +19,7 @@ app.use(cors({
 
 app.use('/api/cat', catsRouter);
 app.use('/api/dog', dogsRouter);
-app.use('/api/users', usersRouter)
+app.use('/api/users', usersRouter);
 // Catch-all 404
 app.use(function (req, res, next) {
   const err = new Error('Not Found');
@@ -34,15 +36,6 @@ app.use(function (err, req, res, next) {
     error: app.get('env') === 'development' ? err : {}
   });
 });
-
-// /users
-// POST, DELETE
-
-// /users/:userId/queue
-// GET
-
-// /adoptions
-// GET, POST, DELETE
 
 app.listen(PORT,()=>{
   console.log('Serving on 8080');

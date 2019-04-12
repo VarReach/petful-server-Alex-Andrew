@@ -26,4 +26,24 @@ dogsRouter
     return res.sendStatus(204);
   });
 
+dogsRouter.route("/adopted").get((req, res, next) => {
+  if (adoptedDogs.first === null) {
+    return res.status(200).json({ message: "No adopted dogs. Adopt now!" });
+  }
+  const serializedQueue = {...adoptedDogs};
+  let current = serializedQueue.first;
+  while (current !== null) {
+    current = {
+      ...current,
+      value: {
+        ...current.value,
+        adoptedBy: xss(current.value.adoptedBy)
+      }
+    };
+    current = current.next;
+  }
+  return res.status(200).json(serializedQueue);
+});
+
+
 module.exports = dogsRouter;
