@@ -5,9 +5,11 @@ const cors = require('cors');
 const catsRouter = require('./cats/cats-router');
 const dogsRouter = require('./dogs/dogs-router');
 const usersRouter = require('./users/users-router');
+const PORT = process.env.PORT || 8080;
 
 const app = express();
-app.use(morgan('tiny'));
+const morganSetting = process.env.NODE_ENV === 'production' ? 'tiny' : 'common'
+app.use(morgan(morganSetting))
 app.use(helmet());
 app.use(cors({ 
   origin: CLIENT_ORIGIN
