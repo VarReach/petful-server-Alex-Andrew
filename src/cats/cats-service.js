@@ -5,16 +5,16 @@ const adoptedCats = require('./store-adopted-cats');
 const ADOPTED_CATS_LIMIT = 5;
 
 const catsService = {
-  addAdoptedcat(cat, human) {
-    this.keepAdoptedcatsUnderLimit();
+  addAdoptedCat(cat, human) {
+    this.keepAdoptedCatsUnderLimit();
     const data = {
       ...cat,
       adoptedBy: human,
     }
     adoptedCats.enqueue(data);
   },
-  keepAdoptedcatsUnderLimit() {
-    const size = queueSize(adoptedcats);
+  keepAdoptedCatsUnderLimit() {
+    const size = queueSize(adoptedCats);
     if (size >= ADOPTED_CATS_LIMIT) {
       adoptedCats.dequeue();
     }

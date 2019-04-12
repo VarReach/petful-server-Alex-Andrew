@@ -4,6 +4,7 @@ const helmet = require('helmet');
 const cors = require('cors');
 const catsRouter = require('./cats/cats-router');
 const dogsRouter = require('./dogs/dogs-router');
+const usersRouter = require('./users/users-router');
 
 const app = express();
 app.use(morgan('tiny'));
@@ -12,6 +13,7 @@ app.use(cors());
 
 app.use('/api/cat', catsRouter);
 app.use('/api/dog', dogsRouter);
+app.use('/api/users', usersRouter)
 // Catch-all 404
 app.use(function (req, res, next) {
   const err = new Error('Not Found');
