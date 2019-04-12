@@ -1,7 +1,8 @@
 const express = require('express');
 const dogQueue = require('./store-dogs');
 const dogsService = require('./dogs-service');
-
+const adoptedDogs = require('./store-adopted-dogs');
+const xss = require('xss');
 const dogsRouter = express.Router();
 const bodyParser = express.json();
 
