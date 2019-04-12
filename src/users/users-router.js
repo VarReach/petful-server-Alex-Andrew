@@ -2,6 +2,8 @@ const express = require('express');
 const userQueue = require('./store-users');
 const uuid = require('uuid/v4');
 
+const { removeUserFromQueue } = require('../Helpers/Queue');
+
 const usersRouter = express.Router();
 const bodyParser = express.json();
 
@@ -19,24 +21,35 @@ usersRouter
     }
     return res.sendStatus(204);
   });
+
 usersRouter
   .route('/:userName')
-  .get((req, res, next) => {
+  .all((req, res, next) => {
     if(userQueue.first === null){
       return res.status(404).json({ message: 'User does not exist'});
     }
-    const user_name = req.params.userName.replace('%20', ' ');
+    req.user_name = req.params.userName.replace('%20', ' ');
+    next();
+  })
+  .get((req, res, next) => {
     let current = userQueue.first;
     let index = 0;
     while(current !== null){
-      index++
-      if(current.value === user_name){
+      index++;
+      if(current.value === req.user_name){
         return res.json(index);
       }
       current = current.next;
     }
     return res.status(404).json({ message: 'User does not exist'});
   })
+  .delete((req, res, next) => {
+    const resp = removeUserFromQueue(req.user_name);
+    if (!resp) {
+      return res.status(404).json({ message: 'User does not exist'});
+    }
+    return res.sendStatus(204);
+  });
 
 module.exports = usersRouter;
 
