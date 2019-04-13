@@ -22,7 +22,8 @@ dogsRouter
   .delete(bodyParser, (req, res, next) => {
     dogQueue.dequeue();
     if (req.dog) {
-      dogsService.addAdoptedDog(req.body.dog, req.body.userName);
+      console.log(req.body.name, req.body.user_name)
+      dogsService.addAdoptedDog(req.body.name, req.body.user_name);
     }
     return res.sendStatus(204);
   });

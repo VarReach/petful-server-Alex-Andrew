@@ -4,13 +4,10 @@ const { dogs } = require('./store-dogs');
 const ADOPTED_DOGS_LIMIT = 5;
 
 const dogsService = {
-  addAdoptedDog(dog, human) {
-    const data = {
-      dog,
-      adoptedBy: human,
-    }
-    const newDog = dogs.find(item => item.name === data.dog);
-    newDog.adoptedBy = data.adoptedBy;
+  addAdoptedDog(name, adoptedBy) {
+    console.log(name, adoptedBy);
+    const newDog = dogs.find(item => item.name === name);
+    newDog.adoptedBy = adoptedBy;
   }
 };
 

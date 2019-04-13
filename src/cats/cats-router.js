@@ -23,7 +23,7 @@ catsRouter
   .delete(bodyParser, (req, res, next) => {
     catQueue.dequeue();
     if (req.cat) {
-      catsService.addAdoptedCat(req.body.cat, req.body.userName);
+      catsService.addAdoptedCat(req.body.name, req.body.user_name);
     }
     return res.sendStatus(204);
   });

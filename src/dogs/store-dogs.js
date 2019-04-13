@@ -2,7 +2,7 @@ const { Queue } = require('../Helpers/Queue');
 
 const dogs = [
   {
-    imageURL:
+    imageUrl:
       'https://www.petmd.com/sites/default/files/Acute-Dog-Diarrhea-47066074.jpg',
     imageDescription: 'A tan, derpy pug with his tongue sticking out',
     name: 'Stephen',
@@ -13,7 +13,7 @@ const dogs = [
       'This handsome man was once a tenured University professor who is now looking for a new home.'
   },
   {
-    imageURL:
+    imageUrl:
       'https://eb8.petinsurance.com/-/media/all-phz-images/2016-images-breeds-850/greyhound850.jpg',
     imageDescription:
       'A grey and white greyhound staring off into the distance',
@@ -25,7 +25,7 @@ const dogs = [
       'Once a racecar driver and pitstop technician, this greyhound is looking for love in all the right places.'
   },
   {
-    imageURL:
+    imageUrl:
       'https://img.buzzfeed.com/buzzfeed-static/static/2016-07/13/6/asset/buzzfeed-prod-web13/sub-buzz-24434-1468407414-1.png?downsize=700:*&output-format=auto&output-quality=auto',
     imageDescription: 'An orange and black haired corgi smiling',
     name: 'Corgilicious',
@@ -36,7 +36,7 @@ const dogs = [
       'This confident little lady loves to stay at home and watch Sopranos.'
   },
   {
-    imageURL:
+    imageUrl:
       'https://www.thesprucepets.com/thmb/UGZpTl4N27XY8JppKyNzyqvKDa0=/450x0/filters:no_upscale():max_bytes(150000):strip_icc()/16_Love-5bb4c12bc9e77c00263933b3.jpg',
     imageDescription: 'A grey and black German Shepherd puppy',
     name: 'Maximillian',
@@ -46,7 +46,7 @@ const dogs = [
     story: 'Max loves pets, snuggles and WWII historical fiction.'
   },
   {
-    imageURL:
+    imageUrl:
       'https://i0.wp.com/grapevine.is/wp-content/uploads/Leifturs-Platina-7months_Gunnur-Sif-Sigurgeirsdottir.jpg?fit=780%2C460&quality=99&ssl=1',
     imageDescription: 'A light tan whippet mid stride through a field',
     name: 'Charles',
@@ -57,7 +57,7 @@ const dogs = [
       'Charles, a former Navy SEAL and green beret, is blindingly fast and will steal your heart just as quickly!'
   },
   {
-    imageURL:
+    imageUrl:
       'https://cdn.shopify.com/s/files/1/2660/2782/products/IMG_5229_1024x1024.jpg?v=1547617723',
     imageDescription:
       'Black mini-poodle sitting on a wood floor with a string of paper hearts in the background',
@@ -69,7 +69,7 @@ const dogs = [
       'Previous owner was a spy and was KIA. But we probably shouldn\'t be telling you that...'
   },
   {
-    imageURL:
+    imageUrl:
       'https://mondrian.mashable.com/uploads%252Fcard%252Fimage%252F818521%252F5809666d-8a76-4631-9de2-3f1cfda9ac52.jpg%252F950x534__filters%253Aquality%252890%2529.jpg?signature=ij6Fj5f799AVltttFUiI96gxYaA=&source=https%3A%2F%2Fblueprint-api-production.s3.amazonaws.com',
     imageDescription: 'Black lab lounging on some grass',
     name: 'Mikey',
@@ -80,7 +80,7 @@ const dogs = [
       'Retired from a successful career as a soccer player, now looking for a great home.'
   },
   {
-    imageURL: 'https://www.k9web.com/wp-content/uploads/2019/01/shiba-inu.jpg',
+    imageUrl: 'https://www.k9web.com/wp-content/uploads/2019/01/shiba-inu.jpg',
     imageDescription:
       'Shiba Inu sitting on grass with a tennis ball in his lap',
     name: 'Mai',
@@ -91,7 +91,7 @@ const dogs = [
       'Former ramen shop owner. Now hiding from the Yakuza. Looking for her dream home.'
   },
   {
-    imageURL:
+    imageUrl:
       'http://2.bp.blogspot.com/-jKQ4Z-r-knI/UGp1M_C9UGI/AAAAAAAARj0/nmAFnCJ720c/s1600/Alaska+Malamute.JPG',
     imageDescription: 'Malamute sitting gracefully in some snow next to a tree',
     name: 'Bruno',
@@ -102,7 +102,7 @@ const dogs = [
       'Former professional sled dog who was injured saving his home from an epidemic.'
   },
   {
-    imageURL:
+    imageUrl:
       'http://www.petpaw.com.au/wp-content/uploads/2014/03/American-Foxhound-2-1030x772.jpg',
     imageDescription:
       'A baby foxhound looking at the camera with puppy-dog eyes',

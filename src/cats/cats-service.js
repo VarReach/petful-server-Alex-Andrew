@@ -4,14 +4,10 @@ const { cats } = require('./store-cats');
 const ADOPTED_CATS_LIMIT = 5;
 
 const catsService = {
-  addAdoptedCat(name, human) {
-    const data = {
-      name,
-      adoptedBy: human,
-    }
-    const newCat = cats.find(item => item.name === data.name);
-    console.log(data)
-    newCat.adoptedBy = data.adoptedBy;
+  addAdoptedCat(name, adoptedBy) {
+    console.log(name, adoptedBy);
+    const newCat = cats.find(item => item.name === name);
+    newCat.adoptedBy = adoptedBy;
   },
 };
 
