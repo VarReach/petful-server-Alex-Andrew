@@ -29,6 +29,6 @@ dogsRouter
 dogsRouter.route('/all')
   .get((req, res, next) => {
     return res.status(200).json(dogs);
-  })
+  });
 
 module.exports = dogsRouter;

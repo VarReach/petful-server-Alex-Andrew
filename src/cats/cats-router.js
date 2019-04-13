@@ -22,13 +22,13 @@ catsRouter
   .delete(bodyParser, (req, res, next) => {
     catQueue.dequeue();
     if (req.cat) {
-      catsService.addAdoptedDog(req.body.name, req.body.user_name);
+      catsService.addAdoptedCat(req.body.name, req.body.user_name);
     }
     return res.sendStatus(204);
   });
 catsRouter.route('/all')
   .get((req, res, next) => {
     return res.status(200).json(cats);
-  })
+  });
 
 module.exports = catsRouter;
