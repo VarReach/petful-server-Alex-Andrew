@@ -32,7 +32,6 @@ usersRouter
     next();
   })
   .get((req, res, next) => {
-    console.log(req.user_name)
     let current = userQueue.first;
     let index = 0;
     while(current !== null){
