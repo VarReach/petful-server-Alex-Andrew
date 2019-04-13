@@ -11,6 +11,7 @@ const app = express();
 
 const morganSetting = (NODE_ENV === 'production') ? 'tiny' : 'common';
 
+console.log(CLIENT_ORIGIN);
 app.use(morgan(morganSetting));
 app.use(helmet());
 app.use(cors({ 
