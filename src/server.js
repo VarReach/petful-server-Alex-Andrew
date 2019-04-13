@@ -10,7 +10,6 @@ const { NODE_ENV, CLIENT_ORIGIN, PORT } = require('./config');
 const app = express();
 
 const morganSetting = (NODE_ENV === 'production') ? 'tiny' : 'common';
-
 console.log(CLIENT_ORIGIN);
 app.use(morgan(morganSetting));
 app.use(helmet());
