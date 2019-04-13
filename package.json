@@ -4,7 +4,7 @@
   "description": "",
   "keywords": [],
   "engines": {
-    "node": "11.9.0"
+    "node": "11.6.0"
   },
   "author": "Alex Cumbo",
   "license": "UNLICENSED",
