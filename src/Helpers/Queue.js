@@ -36,24 +36,6 @@ class Queue {
   }
 }
 
-function removeUserFromQueue(user_name) {
-  if (this.first === null) {
-    return null;
-  }
-
-  let tempNode = this.first;
-  let previousNode = this.first;
-
-  while ((tempNode !== null) && (tempNode.value !== user_name)) {
-    previousNode = tempNode;
-    tempNode = tempNode.next;
-  }
-  if (tempNode === null) {
-    return;
-  }
-  previousNode.next = tempNode.next;
-}
-
 function queueSize(queue) {
   let size = 0;
   if (queue.first === null) {
@@ -69,6 +51,5 @@ function queueSize(queue) {
 
 module.exports = {
   Queue,
-  queueSize,
-  removeUserFromQueue
+  queueSize
 };

@@ -42,13 +42,6 @@ usersRouter
       current = current.next;
     }
     return res.status(404).json({ message: 'User does not exist'});
-  })
-  .delete((req, res, next) => {
-    const resp = removeUserFromQueue(req.user_name);
-    if (!resp) {
-      return res.status(404).json({ message: 'User does not exist'});
-    }
-    return res.sendStatus(204);
   });
 
 module.exports = usersRouter;
